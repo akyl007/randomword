@@ -36,4 +36,15 @@ function generateRandomWord() {
 
     document.getElementById('term').textContent = randomTerm.term;
     document.getElementById('definition').textContent = randomTerm.definition;
+    document.getElementById('definition-container').style.display = 'none'; // Hide definition initially
 }
+
+function showDefinition() {
+    const definitionContainer = document.getElementById('definition-container');
+    definitionContainer.style.display = 'block'; // Show definition
+}
+
+document.getElementById('next-btn').addEventListener('click', () => {
+    generateRandomWord(); // Load the next random word
+    document.getElementById('definition-container').style.display = 'none'; // Hide the definition when showing next word
+});
